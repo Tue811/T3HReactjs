@@ -1,0 +1,149 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Karma', serif;
+
+}
+
+.header{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    
+}
+
+
+.body{
+    margin-top: 50px;
+    width: 100%;
+    font-size: 14px;
+}
+
+div.row.row-product{
+    margin: 0;
+}
+
+.list-card{
+        margin-top: 40px;
+}
+
+.card-product {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+div.card-product{
+    border: none;
+}
+
+.card-title{
+    font-size: 16px;
+}
+
+.card-detail{
+    font-size: 14px;
+}
+
+.pagination-product{
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+a.page-link.link-number{
+    color: black;
+    border: none;
+    font-size: 20px;
+}
+
+a.page-link.link-number:hover{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.info-title{
+    text-align: center; 
+}
+
+.info-img{
+    display: flex;
+    justify-content: center;
+}
+
+.info-img {
+    text-align: center;
+}
+
+.info-detail{
+    text-align: center;
+}
+
+
+.footer{
+    margin: 40px 0;
+    display: flex;
+    font-size: 14px;
+}
+
+.post{
+    display: flex;
+}
+
+.post img{
+    width: 15%;
+    margin-right: 10px;
+}
+
+.post b{
+    font-size: 14px;
+}
+
+.footer b{
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.tags{
+    display: flex;
+}
+
+.tags p{
+    background-color: black;
+    color: white;
+    margin: 5px;
+    padding: 5px;
+}
+/* @media screen and (min-width: 768px) {
+    .box{
+        width: 750px;
+    }
+
+    .box-child{
+        width: 50%;
+    }
+}
+
+@media screen and(min-width: 992px) {
+    .box{
+        width: 990px;
+    }
+
+    .box-child{
+        width: 33.3333%;
+    }
+}
+
+@media screen and(min-width: 1200px) {
+    .box{
+        width: 1200px;
+    }
+
+    .box-child{
+        width: 25%;
+    }
+} */

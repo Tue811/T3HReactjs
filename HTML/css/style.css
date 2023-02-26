@@ -5,3 +5,9 @@ h1{
 p{
     color: green;
 }
+
+.boxModal{
+    width: 30%;
+    float: left;
+    padding: 10px
+}

@@ -1,0 +1,76 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.card-form{
+    padding: 20px;
+}
+
+input[type=text]{
+    /* background-color: red; */
+    border-top: none;
+    border-left:none ;
+    border-right: none;
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+select.form-select{
+     border-top: none;
+    border-left:none ;
+    border-right: none;
+    border-radius: 0;
+    color: #595c5f;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.form-left{
+    padding: 25px;
+}
+
+.title-left{
+    color: #463acb;
+}
+
+.form-right{
+    background-color: #463acb;
+
+}
+
+div.col-5.form-left{
+    padding: 35px;
+}
+
+div.col-5.form-right{
+    padding: 35px;
+}
+
+.title-right{
+    color: white;
+}
+
+.form-right  input#formGroupExampleInput2.form-control::placeholder{
+    color: white;
+}
+
+.form-right  input#formGroupExampleInput.form-control::placeholder{
+    color: white;
+}
+
+.form-right select.form-select{
+    color: white;
+}
+
+.form-right label.form-check-label{
+    color: white;
+}
+
+.form-right button{
+    background-color: white;
+    color: #2f3132;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;
+    font-weight: bold;
+}

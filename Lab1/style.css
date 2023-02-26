@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+body{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    height: 200px;
+    background-color: #2D694F;
+    color: white;
+    align-items: center;
+}
+
+.header img{
+    height: 150px;
+    width: 180px;
+    border-radius: 0px 100px 100px 0;
+}
+
+.name{
+    width: 100%;
+    padding-left: 20px;
+}
+
+.name h1{
+    font-size: 30px;
+}
+
+.name h5{
+    color: rgba(255,255,255,.5);
+    font-size: 15px;
+    letter-spacing: 5px;    
+    padding: 10px 0;
+}
+
+.body{
+    display: flex;
+    width: 100%;
+    background-color: #f6f6f6;
+    padding: 20px 30px 20px 30px;
+    color: #4a4a4a;
+    font-size: 14px;
+}
+
+.body_left{
+    width: 40%;
+    background-color: white;
+    margin-right: 20px;
+}
+
+.title_left{
+    width: 55%;
+    background-color: #2D694F;
+    border-radius: 0px 100px 100px 0;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px ;
+    font-size: 18px;
+}
+
+.contact_info{
+
+    padding: 14px 0;
+}
+
+.contact_info_detail{
+    display: flex;
+    padding: 5px 0 5px 20px;
+    align-items: center;
+}
+
+.contact_info_detail i{
+    margin-right: 10px;
+}
+
+.skill{
+    padding-bottom: 14px;
+}
+
+.skill_info{
+    padding: 14px 0;
+}
+
+.skill_info_detail{
+    padding: 5px 0 5px 20px;
+}
+
+.skill_info_detail img{
+    width: 150px;
+
+}
+
+.certificate_info{
+    /* padding: 14px 10px ; */
+    padding: 10px 10px 10px 20px;
+}
+
+/* .certificate_info_title{
+    font-size: 15px;
+} */
+
+.certificate_info_title i{
+    color: #578F7C ;
+}
+
+.certificate_info_detail{
+    /* padding: 5px 0 5px 20px; */
+}
+
+.certificate_info_detail ul li{
+    margin-left: 15px;
+}
+
+.body_right{
+    width: 60%;
+
+}
+
+.introduce{
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.title_right{
+    border-left: 16px solid #2D694F;
+    padding: 10px;
+    color: #578F7C;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.introduce p{
+    padding: 15px;
+}
+
+.experience{
+    background-color: white;
+}
+
+.experience_info{
+    padding: 15px;
+}
+
+.experience_info_detail{
+    padding-bottom: 20px;
+}
+
+.description ul li{
+    margin-left: 15px;
+}
+
+.company{
+    color: #578F7C ;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.company b i{
+    transform: rotate(45deg);
+    font-size: 10px;
+}
+
+.position{
+    padding: 10px;
+    font-size: 15px;
+}
+

@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: url('../img/mây.jpg') ;
+    background-size: 100%;
+    color: white;
+}
+
+.card-weather{
+    background-color: rgba(129, 121, 121, 0.6);
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.date{
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+.detail{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 20px 0;
+}
+
+.detail img{
+    width: 60px;
+}
+
+.content{
+    padding: 10px;
+}

@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: sans-serif;
+    text-align: left;
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Layout */
+.section{
+    float: left;
+    width: 100%;
+}
+
+.container{
+    float: none;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.sidebar{
+    float: left;
+    width: 33.33%;
+}
