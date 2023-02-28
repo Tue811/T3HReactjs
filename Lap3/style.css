@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.card-contact{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login span{
+    color: #438fc1;
+}
+
+.submit{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-right{
+    background-color: #fafafa;
+    height: 100%;
+}
+
+.product{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-name{
+    display: flex;
+    align-items: center;
+}
+
+.product-name img{
+    width: 60px;
+    padding: 10px;
+}
+
+.detail{
+    display: flex;
+    justify-content: space-between;
+}
