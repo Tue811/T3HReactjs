@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+<header>
+    <title>Game dãy số may mắn (Jackpot)</title>
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+</header>
+
+<body>
+    <h1>Game dãy số may mắn (Jackpot)</h1>
+    <form>
+        <label for="number1">Số thứ nhất:</label>
+        <input type="number" id="number1" min="1" max="55" required>
+        <label for="number2">Số thứ hai:</label>
+        <input type="number" id="number2" min="1" max="55" required>
+        <label for="number3">Số thứ ba:</label>
+        <input type="number" id="number3" min="1" max="55" required>
+        <label for="number4">Số thứ tư:</label>
+        <input type="number" id="number4" min="1" max="55" required>
+        <label for="number5">Số thứ năm:</label>
+        <input type="number" id="number5" min="1" max="55" required>
+        <label for="number6">Số thứ sáu:</label>
+        <input type="number" id="number6" min="1" max="55" required>
+        <button type="button" onclick="play()">Chơi</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        function play() {
+            // Lấy giá trị của 6 số do người chơi chọn
+            const number1 = Number(document.getElementById('number1').value);
+            const number2 = Number(document.getElementById('number2').value);
+            const number3 = Number(document.getElementById('number3').value);
+            const number4 = Number(document.getElementById('number4').value);
+            const number5 = Number(document.getElementById('number5').value);
+            const number6 = Number(document.getElementById('number6').value);
+
+            // Tạo một mảng chứa tất cả các số trong khoảng 01 -> 55
+            const allNumbers = [];
+            for (let i = 1; i <= 55; i++) {
+                allNumbers.push(i);
+            }
+
+            // Lấy ngẫu nhiên bộ 6 số khác nhau trong khoảng 01 -> 55
+            const randomNumbers = [];
+            while (randomNumbers.length <body 6) {
+                const randomIndex = Math.floor(Math.random() * allNumbers.length);
+                const randomNumber = allNumbers[randomIndex];
+                if (!randomNumbers.includes(randomNumber)) {
+                    randomNumbers.push(randomNumber);
+                }
+            }
+
+            // Tính số lượng số trùng nhau giữa 2 bộ số
+            function compareNumbers(playerNumbers, systemNumbers) {
+                let count = 0;
+                for (let i = 0; i <script script playerNumbers.length; i++) {
+                    if (systemNumbers.includes(playerNumbers[i])) {
+                        count++;
+                    }
+                }
+                return count;
+            }
+
+            function calculatePrize(count) {
+                switch (count) {
+                    case 3:
+                        return 200000;
+                    case 4:
+                        return 1700000;
+                    case 5:
+                        return 82500000;
+                    case 6:
+                        return 30000000000;
+                    default:
+                        return 0;
+                }
+            }
+            const playerNumbers = prompt("Nhập 6 số của bạn, cách nhau bởi dấu phẩy:").split(",");
+            const systemNumbers = generateNumbers();
+
+            console.log("Bộ số của bạn là:", playerNumbers);
+            console.log("Bộ số của hệ thống là:", systemNumbers);
+
+            const count = compareNumbers(playerNumbers, systemNumbers);
+            const prize = calculatePrize(count);
+
+            if (prize > 0) {
+                console.log(`Chúc mừng! Bạn đã trúng giải thưởng ${prize} VNĐ.`);
+            } else {
+                console.log("Rất tiếc! Bạn không trúng giải thưởng nào.");
+            }
+    </script>
+    </body>
+    </html>
