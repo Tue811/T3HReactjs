@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Demo Object</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+    var ob1={
+        name: 'Nguyễn Văn An',
+        age: 18,
+        telephone: '0123456789',
+        run: function(){
+            console.log(this.name+' Running...')
+        }
+    };
+    var ob2={
+        name: 'Lê Ngọc Anh',
+        age: 30,
+        telephone: '098754221',
+        run: function(){
+            console.log('Running2..')
+        }
+    };
+    ob1.name ='Đào Văn Nguyên'
+    console.log(ob1.name)
+    console.log(ob2.name)
+    ob1.run()
+    ob2.run()
+
+    var product={
+        name: 'Iphone 14 pro max',
+        price: 1000,
+    }
+</script>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./vendor/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <section>
+        <div class="container">
+            <button class="btn btn-primary"  onmouseleave="mouseLeave()" onmouseenter="mouseEnter()" onclick="clickme" >Click me!</button>
+            <div class="row">
+                <div class="col-3">
+                    <input type="text" name="search" id="search" placeholder="Search" onkeypress="searchPress()" onkeyup="searchUp()" onkeydown="search(this)">
+                    <input type="text" name="search2" id="search2" placeholder="Search2" onkeypress="searchPress()" onkeyup="searchUp()" onkeydown="search(this)">
+                    <select name="select" class="form-control" onchange="change(this)">
+                        <option value="Nam" >Nam</option>
+                        <option value="Nữ">Nữ</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section>
+        <div class="container buttonPopup">
+            <button class="btn btn-primary buttonSubmit" id="clickOpenPopup" type="button" onclick="openModal()"> Click
+                me!</button>
+        </div>
+        <div id="valuePopup">
+
+        </div>
+        <div class=" bigPopup">
+            <div class="popup" id="isPopup">
+                <div class=" card cardPopup">
+                    <div class="header-popup">
+                        <div class="tilte"><h5>Điền form</h5></div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <hr>
+                    <form>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email address</label>
+                          <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="password">
+                        </div>
+                        <div class="mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary" onclick="submitPopup(event)">Submit</button>
+                      </form>
+                      
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</body>
+<script type="text/javascript">
+    var ip = document.getElementById('search')
+    var ip2 = document.getElementById('search2')
+    var email=document.getElementById('email')
+    var password =document.getElementById('password')
+    var valuePopup=document.getElementById('valuePopup')
+
+    function openModal() {
+        document.getElementById('isPopup').style.display = 'block'
+
+    }
+
+    function closePopup(){
+        document.getElementById('isPopup').style.display='none'
+    }
+    function submitPopup(event){
+        valuePopup.innerHTML= 'Email: '+email.value+' Mật khẩu: ' + password.value
+        closePopup();
+        event.preventDefault()
+    
+    }
+
+    function change(x) {
+        var v = x.value
+        console.log('change...' + v)
+    }
+
+    function searchPress() {
+        var v = ip.value
+        if (id == 'search') {
+
+        }
+        console.log('search press ...')
+    }
+
+    function searchUp(x) {
+        var v = x.value
+        console.log('search up....' + v)
+    }
+    function search(x) {
+        var v = x.value
+        console.log("search keydowm..." + v)
+    }
+    function clickme() {
+
+    }
+    function mouseEnter() {
+        console.log('mouse enter...')
+    }
+    function mouseLeave() {
+        console.log('mouse leave...')
+    }
+</script>
+<script type="text/javascript" src="./test.js"></script>
+
+</html>

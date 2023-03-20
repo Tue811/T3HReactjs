@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.buttonPopup{
+    width: 100vw;
+    
+}
+
+.buttonSubmit{
+    position: relative;
+
+}
+
+.bigPopup{
+    position: absolute;
+}
+
+.popup{
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-top: -40px;
+
+}
+
+.cardPopup{
+    width: 500px;
+    height: 500px;
+    margin: 150px auto;
+    padding: 10px;
+}
+
+.header-popup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
