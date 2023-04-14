@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./vendor/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section class="body">
+        <div class="container ">
+            <div class="row">
+                <div class="col-7">
+                    <div class="container body-left">
+                        <div class="title">Shopping cart</div>
+                        <div class="table-product">
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                        <th scope="col">Product</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="list-products">
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="container">
+                        <div class="cart-total">Cart Totals</div>
+                        <div class="detail-total">
+                            <table class="table">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Subtotal</td>
+                                    <td>$315.00</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Shipping</td>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1" checked>
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Free shipping
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault2">
+                                            <label class="form-check-label">
+                                                Flat rate: $10.00
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault2">
+                                            <label class="form-check-label">
+                                                Pick up: $15.00
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>$315.00</td>
+                                </tr>
+
+                            </table>
+                            <button type="button" class="btn btn-secondary btn-total">Process to checkout</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script type="text/javascript">
+    var data = localStorage.getItem("cart")
+    cart = JSON.parse(data)
+    var listProducts = document.getElementById('list-products')
+    console.log(cart)
+    for (var i = 0; i < cart.length; i++) {
+        listProducts.innerHTML += `<tr>
+                                      <th scope="row">x</th>
+                                      <td class="img-product"><img src="${cart[i].thumbnail}" alt=""></td>
+                                      <td>${cart[i].title}</td>
+                                      <td>${cart[i].price}</td>
+                                      <td><div><button id="reduce" onclick="reduceNumber(${cart[i].id})">-<button><input class="number" id="${cart[i].id}" value=1 ><button id="add" onclick="addNumber(${cart[i].id})">+</button></div></td>
+                                      <td>${cart[i].price}</td>
+                                    </tr>`}
+
+</script>
+<script type="text/javascript" src="./vendor/js/bootstrap.bundle.js"></script>
+
+</html>

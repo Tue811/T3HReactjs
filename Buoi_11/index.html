@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Products</title>
+    <link rel="stylesheet" href="./vendor/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="loading" id="loading">
+        Loading...
+    </div>
+    <div id="detailProduct">
+
+    </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                <form action="#" onsubmit="searchProduct()" method="GET" class="d-flex" role="search">
+                    <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            <div class="row" id="list">
+
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination" id="pagination">
+
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+
+    <script type="text/javascript">
+        var page = 1
+        function nextPage() {
+
+            page++;
+            searchProduct();
+
+        }
+        function previousPage() {
+            if (page != 1) {
+
+                page--;
+                searchProduct();
+            }
+        }
+
+        function pageNumber(p) {
+            page = p;
+            searchProduct()
+        }
+
+        function closePopUp() {
+            document.getElementById('detailProduct').style = 'display:none'
+        }
+
+        function searchProduct() {
+            event.preventDefault();
+            var skip = (page - 1) * 12
+            var v = document.getElementById("search").value;
+            document.getElementById('loading').style = 'display:block';
+
+            var pHtml = `<li class="page-item"><a class="page-link" href="#" onclick="previousPage()">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#" onclick="nextPage()">Next</a></li>`
+            var xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+
+                var rs = this.responseText;
+                var data = JSON.parse(rs);
+                var products = data.products;
+                var html = ``;
+                var total_page = data.total % 12 == 0 ? data.total / 12 : parseInt(data.total / 12) + 1;
+
+                for (var i = 1; i <= total_page; i++) {
+                    var active = page === i ? "active" : '';
+                    pHtml += `<li class="page-item ${active}" ><a class="page-link" id="pageNumber" onclick="pageNumber(${i})" href="#">${i}</a></li>`
+                }
+                for (var i = 0; i < products.length; i++) {
+                    var thumb = products[i].thumbnail;
+                    var name = products[i].title;
+                    var desc = products[i].description;
+                    var price = products[i].price;
+
+                    html += `<div class="col-3">
+                        <div class="card" style="width: 18rem;" onclick="detailProduct(${products[i].id})">
+                            <img src="${thumb}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">${name}</h5>
+                              <p class="card-text">${desc}</p>
+                              <a href="#" class="text-danger">${price}</a>
+                            </div>
+                          </div>
+                    </div>`;
+                }
+                document.getElementById("list").innerHTML = html;
+                document.getElementById('loading').style = 'display:none';
+                document.getElementById('pagination').innerHTML = pHtml
+            }
+
+
+
+            xhttp.open("GET", `https://dummyjson.com/products/search?q=${v}&limit=12&skip=${skip}`);
+            xhttp.send();
+        }
+
+        function detailProduct(id) {
+            event.preventDefault();
+            var xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                var rs = this.responseText;
+                var data = JSON.parse(rs);
+                console.log(data)
+                document.getElementById('detailProduct').style = 'display:block';
+                document.getElementById('detailProduct').innerHTML = `<div class="card-product">
+            <div class="close" onclick="closePopUp()">X</div><br>
+            <div class="name-product">
+                Tên sản phẩm: ${data.title}
+            </div>
+            <div class="price-product">Giá sản phẩm: ${data.price}</div>
+            <div class="total-product">Số lượng: ${data.stock}</div>
+            <div class="rate-product">Rate: ${data.rating}</div>
+            <div class="Brand">Brand: ${data.brand}</div>
+        </div>`
+            }
+
+            xhttp.open("GET", `https://dummyjson.com/products/${id}`);
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>

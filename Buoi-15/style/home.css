@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #111827;
+}
+
+.nav-header{
+    background-color: white !important;
+}
+
+.nav-header img{
+    width: 162px;
+}
+
+.nav-header .header-left ul{
+    display: flex;
+    align-items: center;
+}
+
+.choice{
+    display: unset;
+}
+
+.nav-header .header-logo{
+    border-right: solid 1px rgba(0,0,0,0.5);
+}
+
+.banner-group{
+    background-color: #e3ffe6;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner img{
+    width: 600px !important;
+    height: 550px;
+}
+
+.banner-text{
+    margin: 10% 0 0 10%;
+    font-weight: bold;
+}
+
+.banner-text-small{
+    font-size: 1.25rem;
+}
+
+.banner-text-big{
+    width: 100%;
+    font-size: 50px;
+}
+
+.btn-more{
+    background-color: #1e293b;
+    color: white;
+    border-radius: 40px;
+    padding: 15px;
+    width: 150px;
+}
+
+.steps{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25% 0;
+}
+
+.step-img{
+    width: 100%;
+}
+
+.step-img img{
+    width: 50%;
+    margin-left: 25% !important;
+}
+
+.step-name{
+    width: 100%;
+}
+
+.step-name p{
+    background-color: #fee2e2;
+    color: #dc5959;
+    width: 30%;
+    font-size: 13px;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 30px;
+    margin: 0 auto;
+}
+
+.step-title{
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 15px 0;
+}
+
+.step-des{
+    font-size: .875rem;
+    text-align: center;
+}
+
+.list-products-title span{
+    color: #6b7280;
+}
+
+.card-product{
+    width: 100%;
+}
+
+.card-product .card{
+    max-width: 100%;
+    border: none;
+}
+
+.card-product img{
+    background-color: #f8fafc;
+    border-radius: 20px;
+}
+
+.price {
+    border: solid 2px #22c55e;
+    border-radius: 10px;
+    padding: 3px 10px;
+    font-size: 13px;
+    color: #22c55e;
+    font-weight: bold;
+
+}
+
+.rate i{
+    color: #fbbf24;
+}
+
+.footer-card{
+    display: flex;
+    justify-content: space-between;
+}
